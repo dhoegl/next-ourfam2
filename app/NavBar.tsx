@@ -1,8 +1,13 @@
+'use client'
+
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import React from 'react'
 import { FaChurch } from "react-icons/fa";
+import classnames from 'classnames';
 
 const NavBar = () => {
+    const currentPath = usePathname();
     const links = [
         { label: 'Dashboard', href: '/' },
         { label: 'Families', href: '/families' },
@@ -17,7 +22,12 @@ const NavBar = () => {
             {links.map(link =>
             <Link
                 key={link.href}
-                className='text-blue-500 hover:text-red-500 transition-colors' 
+                className={classnames({
+                    'text-yellow-500': link.href === currentPath,
+                    'text-blue-500': link.href !== currentPath,
+                    'hover:text-red-500 transition-colors':true
+                })}
+                // className={`${link.href === currentPath ? 'text-green-900' : 'text-blue-500'} hover:text-red-500 transition-colors` }
                 href={link.href}>{link.label}
             </Link>)}
         </ul>

@@ -1,11 +1,11 @@
 import React from 'react'
 
-const PrayerRequest = () => {
+const About = () => {
   return (
     <div className="pl-5 pt-20">
-      Prayer Requests
+      About Us
     </div>
   )
 }
 
-export default PrayerRequest
+export default About

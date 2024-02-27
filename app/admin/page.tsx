@@ -2,7 +2,7 @@ import React from 'react'
 
 const Administration = () => {
   return (
-    <div>
+    <div className="pl-5 pt-20">
       Administration
     </div>
   )

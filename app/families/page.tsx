@@ -2,7 +2,7 @@ import React from 'react'
 
 const Families = () => {
   return (
-    <div>
+    <div className="pl-5 pt-20">
       Families
     </div>
   )

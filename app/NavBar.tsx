@@ -10,21 +10,17 @@ const Navbar: React.FC = () => {
     const currentPath = usePathname();
     const [nav, setNav] = useState(false);
   const links = [
-    // { id: 1, link: "home" },
-    // { id: 2, link: "about" },
-    // { id: 3, link: "portfolio" },
-    // { id: 4, link: "experience" },
-    // { id: 5, link: "contact" },
     { id: 1, label: 'Dashboard', href: '/' },
     { id: 2, label: 'Families', href: '/families' },
     { id: 3, label: 'Prayer Requests', href: '/prayer' },
-    { id: 4, label: 'Admin', href: '/admin' }
+    { id: 4, label: 'Admin', href: '/admin' },
+    { id: 5, label: 'About Us', href: '/about' }
 ];
 
   return (
-    <div className="flex justify-between items-center w-full h-20 px-4 text-white bg-black fixed nav">
+    <div className="flex justify-between items-center w-full h-14 px-4 text-white bg-black fixed nav">
       <div>
-        <h1 className="text-5xl font-signature ml-2">
+        <h1 className="text-4xl font-signature ml-2">
           <a
             className="link-underline link-underline-black"
             href=""
@@ -45,14 +41,14 @@ const Navbar: React.FC = () => {
           </li>
         ))}
       </ul> */}
-        <ul className='flex flex-col mt-5'>
+        <ul className='hidden md:flex'>
             {links.map(link =>
             <Link
                 key={link.href}
                 className={classnames({
-                    'text-yellow-500': link.href === currentPath,
-                    'text-blue-500': link.href !== currentPath,
-                    'hover:text-red-500 transition-colors':true
+                    'text-yellow-500 p-3 capitalize text-xl': link.href === currentPath,
+                    'text-white p-3 capitalize font-medium': link.href !== currentPath,
+                    'hover:bg-blue-700 transition-colors':true
                 })}
                 // className={`${link.href === currentPath ? 'text-green-900' : 'text-blue-500'} hover:text-red-500 transition-colors` }
                 href={link.href}>{link.label}
@@ -65,13 +61,18 @@ const Navbar: React.FC = () => {
         {nav ? <FaTimes size={30} /> : <FaBars size={30} />}
       </div>
       {nav && (
-        <ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-black to-gray-800 text-gray-500">
-          {links.map(({ id, label }) => (
+        // <ul className="flex flex-col justify-center items-left absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-black to-gray-800 text-gray-500">
+        <ul className="flex flex-col justify-start py-20 items-left absolute top-0 left-0 bg-gradient-to-b from-black to-gray-400 text-white">
+            {/* {links.map(link => */}
+          {links.map(({ label,href }) => (
             <li
-              key={id}
-              className="px-4 cursor-pointer capitalize py-6 text-4xl"
+            //   key={id}
+              key={label}
+              className="px-4 cursor-pointer capitalize p-2 text-l"
             >
-              <Link onClick={() => setNav(!nav)} href={label}>
+              {/* <Link onClick={() => setNav(!nav)} href={label}> */}
+              <Link
+                onClick={() => setNav(!nav)} href={href}>
                 {label}
               </Link>
             </li>

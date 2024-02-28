@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation'
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import classnames from 'classnames';
-
+import Image from "next/image"; // Import the Image component
 
 const Navbar: React.FC = () => {
     const currentPath = usePathname();
@@ -27,8 +27,14 @@ const Navbar: React.FC = () => {
             target="_blank"
             rel="noreferrer"
           >
-            Logo
           </a>
+          <Image
+            src="/public/assets/TEC App Icon 08.png" // Set the path to your logo image
+            alt="Your Logo"
+            width={20} // Set the desired width
+            height={20} // Set the desired height
+          >
+            </Image>
         </h1>
       </div>
       {/* <ul className="hidden md:flex">

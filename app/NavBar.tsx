@@ -20,22 +20,22 @@ const Navbar: React.FC = () => {
   return (
     <div className="flex justify-between items-center w-full h-14 px-4 text-white bg-black fixed nav">
       <div>
-        <h1 className="text-4xl font-signature ml-2">
-          <a
+        {/* <h1 className="text-4xl font-signature ml-2"> */}
+          {/* <a
             className="link-underline link-underline-black"
             href=""
             target="_blank"
             rel="noreferrer"
           >
-          </a>
+          </a> */}
+          
           <Image
-            src="/public/assets/TEC App Icon 08.png" // Set the path to your logo image
+            src="/DanPortrait.jpg" // Set the path to your logo image
+            width={100} // Set the desired width
+            height={100} // Set the desired height
             alt="Your Logo"
-            width={20} // Set the desired width
-            height={20} // Set the desired height
-          >
-            </Image>
-        </h1>
+          />
+        {/* </h1> */}
       </div>
       {/* <ul className="hidden md:flex">
         {links.map(({ id, link }) => (

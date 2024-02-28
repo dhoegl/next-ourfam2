@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { usePathname } from 'next/navigation'
 import React, { useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes, FaChurch } from "react-icons/fa";
 import classnames from 'classnames';
 import Image from "next/image"; // Import the Image component
 
@@ -20,22 +20,25 @@ const Navbar: React.FC = () => {
   return (
     <div className="flex justify-between items-center w-full h-14 px-4 text-white bg-black fixed nav">
       <div>
-        {/* <h1 className="text-4xl font-signature ml-2"> */}
-          {/* <a
+        <h1 className="text-4xl font-signature ml-2">
+          <Link href="/">
+          <Image
+            src="/assets/TEC App Icon 08.png" // Set the path to your logo image
+            width={40} // Set the desired width
+            height={40} // Set the desired height
+            alt="Your Logo"
+            // placeholder="blur"
+          />
+            {/* < FaChurch /> */}
+          </Link>
+          <a
             className="link-underline link-underline-black"
             href=""
             target="_blank"
             rel="noreferrer"
           >
-          </a> */}
-          
-          <Image
-            src="/DanPortrait.jpg" // Set the path to your logo image
-            width={100} // Set the desired width
-            height={100} // Set the desired height
-            alt="Your Logo"
-          />
-        {/* </h1> */}
+          </a>
+        </h1>
       </div>
       {/* <ul className="hidden md:flex">
         {links.map(({ id, link }) => (

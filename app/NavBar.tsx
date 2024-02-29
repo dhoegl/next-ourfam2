@@ -71,7 +71,7 @@ const Navbar: React.FC = () => {
       </div>
       {nav && (
         // <ul className="flex flex-col justify-center items-left absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-black to-gray-800 text-gray-500">
-        <ul className="flex flex-col justify-start py-20 items-left absolute top-0 left-0 bg-gradient-to-b from-black to-gray-400 text-white">
+        <ul className="flex flex-col justify-normal py-25 items-left absolute top-12 left-0 bg-gradient-to-b from-orange-800 to-orange-400 text-white">
             {/* {links.map(link => */}
           {links.map(({ label,href }) => (
             <li

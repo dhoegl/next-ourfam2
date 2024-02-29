@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import {
     MDBContainer,
     MDBIcon,
@@ -52,9 +52,8 @@ export default function App() {
                 <MDBCollapse navbar open={openNav}>
                     <MDBNavbarNav right fullWidth={false}>
                         <MDBNavbarItem>
-                            <MDBNavbarLink active aria-current='page' href='/'>
-                                Home
-                            </MDBNavbarLink>
+                            {/* <MDBNavbarLink active aria-current='page' href='/'> */}
+                            <MDBNavbarLink href='/'>Home</MDBNavbarLink>
                         </MDBNavbarItem>
                         <MDBNavbarItem>
                             <MDBNavbarLink href='/dashboard'>Dashboard</MDBNavbarLink>

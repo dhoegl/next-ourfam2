@@ -1,11 +1,11 @@
 import React from 'react'
 
-const About = () => {
+const contact = () => {
   return (
     <div className="pl-5 pt-2">
-      About Us
+      Contact Us
     </div>
   )
 }
 
-export default About
+export default contact

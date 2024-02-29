@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const Families = () => {
   return (
-    <div className="pl-5 pt-20">
+    <div className="pl-5 pt-2">
       Families
 
     </div>

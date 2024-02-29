@@ -5,6 +5,7 @@ import NavBar from './NavBar'
 import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 import "@fortawesome/fontawesome-free/css/all.min.css"
 import { Roboto } from "next/font/google";
+import Footer from './components/Footer'
 
 const roboto = Roboto({ weight: "400", subsets: ["latin"] });
 
@@ -25,8 +26,10 @@ export default function RootLayout({
       {/* <body className={inter.className}> */}
       <body className={roboto.className}>
         <NavBar />
+
         <main>{children}</main>
-        </body>
+        <Footer />
+      </body>
     </html>
   )
 }

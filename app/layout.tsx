@@ -1,7 +1,9 @@
+import '@radix-ui/themes/styles.css';
 import './globals.css'
 import type { Metadata } from 'next'
 // import { Inter } from 'next/font/google'
-import NavBar from './NavBar_old3'
+import { Theme, ThemePanel } from '@radix-ui/themes';
+import NavBar from './NavBar'
 import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 import "@fortawesome/fontawesome-free/css/all.min.css"
 import { Roboto } from "next/font/google"
@@ -24,11 +26,13 @@ export default function RootLayout({
     <html lang="en">
       {/* <body className={inter.className}> */}
       <body className={roboto.className}>
-        <NavBar />
+        <Theme>
+          <NavBar />
 
-        <main>{children}</main>
-
-        <Footer />
+          <main>{children}</main>
+          {/* <ThemePanel /> */}
+          <Footer />
+        </Theme>
       </body>
     </html>
   )

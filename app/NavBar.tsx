@@ -8,9 +8,10 @@ import Image from "next/image"; // Import the Image component
 
 const Navbar: React.FC = () => {
     const currentPath = usePathname();
+    console.log(currentPath);
     const [nav, setNav] = useState(false);
   const links = [
-    { id: 1, label: 'Dashboard', href: '/' },
+    { id: 1, label: 'Dashboard', href: '/dashboard' },
     { id: 2, label: 'Families', href: '/families' },
     { id: 3, label: 'Prayer Requests', href: '/prayer' },
     { id: 4, label: 'Admin', href: '/admin' },
@@ -19,7 +20,7 @@ const Navbar: React.FC = () => {
 ];
 
   return (
-    <div className="flex justify-between items-center w-full h-14 px-4 text-white bg-black fixed nav">
+    <div className="flex justify-between items-center w-full h-16 px-4 text-white bg-black fixed nav">
       <div>
         <h1 className="text-4xl font-signature ml-2">
           <Link href="/">
@@ -56,10 +57,10 @@ const Navbar: React.FC = () => {
             <Link
                 key={link.href}
                 className={classnames({
-                    'text-yellow-500 p-3 capitalize text-xl': link.href === currentPath,
+                  'text-yellow-500 p-3 capitalize font-medium': link.href === currentPath,
                     'text-white p-3 capitalize font-medium': link.href !== currentPath,
-                    'hover:bg-blue-700 transition-colors':true
-                })}
+                    'hover:bg-blue-900 transition-colors':true
+                  })}
                 // className={`${link.href === currentPath ? 'text-green-900' : 'text-blue-500'} hover:text-red-500 transition-colors` }
                 href={link.href}>{link.label}
             </Link>)}
